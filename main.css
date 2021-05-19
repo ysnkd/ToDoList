@@ -1,0 +1,72 @@
+body
+{
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+form,span{
+    margin: auto;
+    width: 80%;
+   display:grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+
+input[type=button]
+{
+    height: 60px;
+    width: 550px;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 20px;
+
+    
+}
+input[type=text]
+{
+    height: 56px;
+    width: 550px;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size:30px;
+}
+select{
+    max-width: 150px;
+    margin: 0.25rem;
+    
+}
+h2,h4,h5{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 15px;
+}
+.baslik{
+  
+    display: block;
+    width: 80%;
+    line-height: 60px;
+    margin: auto;
+    padding: 25px 0;
+    font-weight: bolder;
+    font-size: 30px;
+
+}
+li
+{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    border-style: solid;
+}
+
+
+
+
+li img{
+    width: 50px;
+    height: 30px;
+    margin: 0 0.25rem;
+}

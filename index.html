@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>JavaScript-Yapılacaklar Listesi</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='code.js'></script>
+</head>
+<body>
+    <h2 class="baslik">TODOLIST DERSLERİ</h2>
+    <form action="" id="formYapilacaklar">
+        <input type="text" name="" id="txtYapilacaklar">
+        <input type="button" value="Listeye Ekle" id="btnEkle" onclick="listeyeEkle();">
+    </form>
+    <span>
+        <h4>Liste</h4>
+        <h4>Seçilenler</h4>
+        <ul id="listeYapilacaklar">
+            
+        </ul>
+        
+        <ul id="listeTamamlananlar">
+            
+        </ul>
+    </span>
+    <h5 id="sonuc"></h5>
+</body>
+<script>
+
+var eleman,btnSil,btnTamam,girilen,secilen;
+
+function listeyeEkle()
+{
+    girilen=document.getElementById("txtYapilacaklar").value;
+
+    if(girilen!="")
+    {
+        
+        eleman=document.createElement("li");
+        document.getElementById("listeYapilacaklar").appendChild(eleman);
+        eleman.innerHTML=girilen;
+
+       
+        btnTamam=document.createElement("img");
+        eleman.appendChild(btnTamam);
+        btnTamam.setAttribute("src","images/tamam.png");
+        btnTamam.setAttribute("id","btnTamam");
+        btnTamam.addEventListener("click",tamamla);
+
+       
+        btnSil=document.createElement("img");
+        eleman.appendChild(btnSil);
+        btnSil.setAttribute("src","images/sil.png");
+        btnSil.setAttribute("id","btnSil");
+        btnSil.addEventListener("click",sil);
+    }
+    else alert("Boş bırakmayınız!");
+
+}
+function sil()
+{
+  
+    secilen=event.currentTarget.parentNode;
+    secilen.remove();
+    
+}
+
+function tamamla()
+{
+    
+    eleman=document.createElement("li");
+    document.getElementById("listeTamamlananlar").appendChild(eleman);
+    secilen=event.currentTarget.parentNode;
+    secilen.childNodes[1].style.display="none";
+    secilen.childNodes[2].setAttribute("onclick","sil();");
+    eleman.innerHTML=secilen.innerHTML;
+
+    sil();
+
+}
+
+
+
+
+
+</script>
+
+</html>
